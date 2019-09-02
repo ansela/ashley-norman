@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/layout'
+import PostPreview from '../components/blog/post-preview'
 
 import usePosts from '../hooks/use-posts'
 
@@ -9,7 +10,7 @@ const Blog = () => {
 
   return (
     <Layout>
-      {posts.map(post => <pre>{JSON.stringify(post, null, 2)}å</pre>)}
+      {posts.map(post => <PostPreview key={post.slug} post={post} />)}
     </Layout>
   )
 }
