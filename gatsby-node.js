@@ -12,7 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `)
 
   if (result.errors) {
-    reporter.panic('failed to create posts', result.errors)
+    reporter.panic("failed to create posts", result.errors)
   }
 
   const posts = result.data.allMdx.nodes
@@ -20,10 +20,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   posts.forEach(post => {
     actions.createPage({
       path: post.frontmatter.slug,
-      component: require.resolve('./src/templates/post.js'),
+      component: require.resolve("./src/templates/post.js"),
       context: {
-        slug: post.frontmatter.slug
-      }
+        slug: post.frontmatter.slug,
+      },
     })
   })
 }

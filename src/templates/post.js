@@ -1,9 +1,9 @@
-import React from 'react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { graphql, Link } from 'gatsby'
-import { css } from '@emotion/core'
+import React from "react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { graphql, Link } from "gatsby"
+import { css } from "@emotion/core"
 
-import Layout from '../components/layout'
+import Layout from "../components/layout"
 
 export const query = graphql`
   query($slug: String!) {
@@ -20,7 +20,13 @@ export const query = graphql`
 const PostTemplate = ({ data: { mdx: post } }) => (
   <Layout>
     <h1>{post.frontmatter.title}</h1>
-    <p css={css`font-size: 0.75rem;`}>posted by {post.frontmatter.author}</p>
+    <p
+      css={css`
+        font-size: 0.75rem;
+      `}
+    >
+      posted by {post.frontmatter.author}
+    </p>
     <MDXRenderer>{post.body}</MDXRenderer>
     <Link to="/blog/">&larr; back to all posts</Link>
   </Layout>

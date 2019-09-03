@@ -1,10 +1,10 @@
 import React from "react"
 import { Global, css } from "@emotion/core"
-import Helmet from 'react-helmet'
+import Helmet from "react-helmet"
 
-import Header from './header'
+import Header from "./header"
 
-import useSiteMetadata from '../hooks/use-sitemetadata'
+import useSiteMetadata from "../hooks/use-sitemetadata"
 
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata()
@@ -24,9 +24,9 @@ const Layout = ({ children }) => {
           body {
             margin: 0;
             color: #555;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-              Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-              'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+              Helvetica, Arial, sans-serif, "Apple Color Emoji",
+              "Segoe UI Emoji", "Segoe UI Symbol";
             font-size: 14px;
             line-height: 1.4;
             @media (min-width: calc(550px + 10vw)) {
