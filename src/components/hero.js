@@ -18,14 +18,13 @@ const TextBox = styled("div")`
   background-image: linear-gradient(to top #ddbbffdd 2rem, #ddbbff00);
   display: flex;
   flex-direction: column;
-  height: 50%;
+  height: 75%;
   /* justify-content: center; */
   align-items: center;
   padding: 5rem 2rem;
   width: 100%;
   color: white;
   text-align: center;
-  margin-top: 0;
 
   h1 {
     /* text-shadow: 1px 1px 3px #eeddff66; */
@@ -44,15 +43,16 @@ const TextBox = styled("div")`
   }
 `
 
-const ArrowButton = styled("button")`
+const ArrowButton = styled.button`
   background-color: purple;
   color: white;
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  margin: 1em auto;
 `
 
-const Hero = () => {
+const Hero = ({ onClickArrow }) => {
   const { image } = useStaticQuery(graphql`
     query {
       image: file(relativePath: { eq: "hero2.jpg" }) {
@@ -74,9 +74,7 @@ const Hero = () => {
           <Link to="/about/">Learn More</Link>
         </p>
       </TextBox>
-      <ArrowButton onClick={() => console.log("arrow clicked")}>
-        Next
-      </ArrowButton>
+      <ArrowButton onClick={onClickArrow}>&darr;</ArrowButton>
     </ImageBackground>
   )
 }

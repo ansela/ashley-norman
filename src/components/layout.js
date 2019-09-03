@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import { Global, css } from "@emotion/core"
 import Helmet from "react-helmet"
 
@@ -6,7 +6,7 @@ import Header from "./header"
 
 import useSiteMetadata from "../hooks/use-sitemetadata"
 
-const Layout = ({ children }) => {
+const Layout = forwardRef(({ children }, ref) => {
   const { title, description } = useSiteMetadata()
   return (
     <>
@@ -70,11 +70,12 @@ const Layout = ({ children }) => {
           width: 550px;
           border: 1px solid #ddd;
         `}
+        ref={ref}
       >
         {children}
       </main>
     </>
   )
-}
+})
 
 export default Layout
